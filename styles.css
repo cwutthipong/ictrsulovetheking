@@ -3,6 +3,14 @@ html {
     color: #555
 }
 
+#preloadfont {
+  font-family: 'arthitregular';
+  opacity:0;
+  height:0;
+  width:0;
+  display:inline-block;
+}
+
 	#download {
 	    float:left;
 	    cursor:pointer;

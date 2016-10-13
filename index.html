@@ -22,6 +22,7 @@
             <div class="page-content">
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--6-col">
+                        <div id="preloadfont">&nbsp;</div>
                         <canvas id="canvas" width=600 height=600 style="float:right"></canvas>
                     </div>
                     <div class="mdl-cell mdl-cell--6-col">
@@ -29,13 +30,13 @@
                         <h1 class="font-title"><i class="material-icons">favorite</i> สร้างรูปเรารักพ่อหลวง</h1>
                         <h3 class="font-title">กรอกชื่อของคุณ</h3>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="username" value="เด็กไอทีรังสิต">
+                            <input class="mdl-textfield__input" type="text" id="username" value="เด็กไอซีทีรังสิต">
                             <label class="mdl-textfield__label" for="username">ชื่อของคุณ</label>
                         </div>
                         <br>
                         <div class="mdl-textfield mdl-js-textfield" style="width:300px;">
                             <label for="offset">ปรับตำแหน่ง</label>
-                            <input id="offset" class="mdl-slider mdl-js-slider" type="range" min="0" max="200" value="125" tabindex="0"> </div>
+                            <input id="offset" class="mdl-slider mdl-js-slider" type="range" min="0" max="200" value="105" tabindex="0"> </div>
                         <br>
                         <div class="mdl-textfield mdl-js-textfield" style="width:300px;">
                             <label for="offset">ขนาดตัวอักษร</label>
@@ -73,14 +74,14 @@
                     context.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
                     context.fillStyle = '#fff';
                     context.font = 'normal ' + (+fontsize.value) + 'px arthitregular';
-                    context.fillText(username.value, +offset.value, 150);
-                    context.font = 'normal 70px arthitregular';
-                    context.fillText('พ่อหลวง', 170, 480);
+                    context.fillText(username.value, +offset.value, 170);
+                    context.font = 'normal 100px arthitregular';
+                    context.fillText('พ่อหลวง', 120, 460);
                     context.fillStyle = 'yellow';
                     context.font = 'normal 40px arthitregular';
-                    context.fillText('Rangsit University', 170, 50);                    
+                    context.fillText('Rangsit University', 160, 50);                    
                     context.font = 'normal 25px arthitregular';
-                    context.fillText('College of Information and Communication Technology', 40, 560);                       
+                    context.fillText('College of Information and Communication Technology', 30, 560);                       
                 };
                 img.src = 'bg.png';
                 
@@ -88,7 +89,7 @@
         
         
         if (window.location.hash) {
-            username.value = decodeURIComponent(window.location.hash.replace(/#|@(.)+/g, '') || 'เด็กไอทีรังสิต');
+            username.value = decodeURIComponent(window.location.hash.replace(/#|@(.)+/g, '') || 'เด็กไอซีทีรังสิต');
         }
         render();
         username.onkeyup = render;
@@ -100,6 +101,8 @@
             this.href = document.getElementById('canvas').toDataURL();
             this.download = 'ICT_RSU_LOVE-the_King.png';
         };
+        window.location.href = "#";
+        document.getElementById("username").value = "เด็กไอซีทีรังสิต";
           
     </script>
 
